@@ -23,9 +23,9 @@ public class Portfolio {
     @Column(name = "portfolio_name")
     private String portfolioName;
 
-    @ManyToMany
+    @OneToMany
     @JoinTable(
-            name = "portfolio_assets",
+            name = "portfolio_asset",
             joinColumns = @JoinColumn(name = "portfolio_id"),
             inverseJoinColumns = @JoinColumn(name = "asset_id")
     )

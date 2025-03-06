@@ -37,5 +37,5 @@ public class Investor {
             joinColumns = @JoinColumn(name = "investor_id"),
             inverseJoinColumns = @JoinColumn(name = "portfolio_id")
     )
-    private List<Portfolio> portfolioList;
+    private List<Portfolio> portfolios;
 }

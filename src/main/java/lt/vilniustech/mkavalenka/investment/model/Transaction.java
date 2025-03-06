@@ -7,6 +7,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.time.LocalDateTime;
+
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
@@ -16,12 +18,12 @@ import lombok.Setter;
 public class Transaction {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private int id;
+
+    @Column(name = "timestamp")
+    private LocalDateTime timestamp;
 
     @Column(name = "quantity")
     private int quantity;
 
-    @ManyToOne
-    @JoinColumn(name = "asset_id")
-    private Asset asset;
 }

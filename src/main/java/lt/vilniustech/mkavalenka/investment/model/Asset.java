@@ -7,6 +7,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 @AllArgsConstructor
@@ -18,12 +19,20 @@ import java.util.List;
 public class Asset {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private int id;
 
-    @Column(name = "quantity")
-    private int quantity;
+    @Column(name = "asset_name")
+    private String assetName;
 
-    @ManyToMany(mappedBy = "assets")
-    private List<Portfolio> portfolios;
+    @Column(name = "quantity", precision = 65, scale = 4)
+    private BigDecimal quantity;
+
+    @OneToMany
+    @JoinTable(
+            name = "asset_transaction",
+            joinColumns = @JoinColumn(name = "asset_id"),
+            inverseJoinColumns = @JoinColumn(name = "transaction_id")
+    )
+    private List<Transaction> transactions;
 
 }
