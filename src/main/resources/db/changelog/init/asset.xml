@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+
+    <changeSet id="create-table-asset" author="mastvei-kavalenka">
+        <createTable tableName="asset">
+            <column name="id" type="int">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+
+            <column name="asset_name" type="varchar(255)">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="quantity" type="decimal(65,4)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+
+    <changeSet id="create-table-asset-transaction" author="mastvei-kavalenka">
+        <createTable tableName="asset_transaction">
+            <column name="asset_id" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="transaction_id" type="int">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+
+    <changeSet id="load-data-asset" author="mastvei-kavalenka">
+        <loadData tableName="asset" file="db/changelog/csv/asset.csv" separator="," encoding="UTF-8">
+            <column name="id" type="NUMERIC"/>
+            <column name="asset_name" type="STRING"/>
+            <column name="quantity" type="NUMERIC"/>
+        </loadData>
+    </changeSet>
+
+    <changeSet id="load-data-asset-transaction" author="mastvei-kavalenka">
+        <loadData tableName="asset_transaction" file="db/changelog/csv/asset_transaction.csv" separator="," encoding="UTF-8">
+            <column name="asset_id" type="NUMERIC"/>
+            <column name="transaction_id" type="NUMERIC"/>
+        </loadData>
+    </changeSet>
+
+</databaseChangeLog>

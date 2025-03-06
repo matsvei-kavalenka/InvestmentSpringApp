@@ -3,5 +3,12 @@
         xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
-
+<!--Investor-->
+    <include file="db/changelog/init/investor.xml"/>
+<!--Portfolio-->
+    <include file="db/changelog/init/portfolio.xml"/>
+<!--Asset-->
+    <include file="db/changelog/init/asset.xml"/>
+<!--Transaction-->
+    <include file="db/changelog/init/transaction.xml"/>
 </databaseChangeLog>

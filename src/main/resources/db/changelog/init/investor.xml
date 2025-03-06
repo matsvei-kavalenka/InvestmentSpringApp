@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+
+    <changeSet id="create-table-investor" author="mastvei-kavalenka">
+        <createTable tableName="investor">
+            <column name="id" type="int">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+
+            <column name="first_name" type="varchar(255)">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="last_name" type="varchar(255)">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="login" type="varchar(255)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+
+    <changeSet id="create-table-investor-portfolio" author="mastvei-kavalenka">
+        <createTable tableName="investor_portfolio">
+            <column name="investor_id" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="portfolio_id" type="int">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+
+    <changeSet id="load-data-investor" author="mastvei-kavalenka">
+        <loadData tableName="investor" file="db/changelog/csv/investor.csv" separator="," encoding="UTF-8">
+            <column name="id" type="NUMERIC"/>
+            <column name="first_name" type="STRING"/>
+            <column name="last_name" type="STRING"/>
+            <column name="login" type="STRING"/>
+        </loadData>
+    </changeSet>
+
+    <changeSet id="load-data-investor-portfolio" author="mastvei-kavalenka">
+        <loadData tableName="investor_portfolio" file="db/changelog/csv/investor_portfolio.csv" separator="," encoding="UTF-8">
+            <column name="investor_id" type="NUMERIC"/>
+            <column name="portfolio_id" type="NUMERIC"/>
+        </loadData>
+    </changeSet>
+</databaseChangeLog>
