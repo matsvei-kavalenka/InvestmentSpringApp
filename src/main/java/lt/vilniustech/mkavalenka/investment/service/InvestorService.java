@@ -18,4 +18,8 @@ public class InvestorService {
     public List<Investor> getAllInvestors() {
         return investorRepository.findAll();
     }
+
+    public Investor getInvestorById(int id) {
+        return investorRepository.findById(id);
+    }
 }

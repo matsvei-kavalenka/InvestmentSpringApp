@@ -17,5 +17,7 @@ public class PortfolioService {
     public List<Portfolio> getAllPortfolios() {
         return portfolioRepository.findAll();
     }
+
+
 }
 

@@ -33,7 +33,7 @@ public class Investor {
 
     @OneToMany
     @JoinTable(
-            name = "Investor_Portfolios",
+            name = "investor_portfolio",
             joinColumns = @JoinColumn(name = "investor_id"),
             inverseJoinColumns = @JoinColumn(name = "portfolio_id")
     )
