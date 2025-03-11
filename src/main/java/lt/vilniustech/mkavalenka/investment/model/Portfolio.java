@@ -30,6 +30,11 @@ public class Portfolio {
             inverseJoinColumns = @JoinColumn(name = "asset_id")
     )
     private List<Asset> assets;
+
+    public Portfolio(int id, String portfolioName) {
+        this.id = id;
+        this.portfolioName = portfolioName;
+    }
 }
 
 

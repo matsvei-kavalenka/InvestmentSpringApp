@@ -4,10 +4,8 @@ package lt.vilniustech.mkavalenka.investment.service;
 import jakarta.xml.bind.JAXBContext;
 import jakarta.xml.bind.JAXBException;
 import jakarta.xml.bind.Marshaller;
-import lt.vilniustech.mkavalenka.investment.db.PortfolioRepository;
 import lt.vilniustech.mkavalenka.investment.model.Investor;
 import lt.vilniustech.mkavalenka.investment.model.InvestorWrapper;
-import lt.vilniustech.mkavalenka.investment.model.Portfolio;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

@@ -1,7 +1,6 @@
 package lt.vilniustech.mkavalenka.investment.controller;
 
 
-import jakarta.xml.bind.JAXBException;
 import lt.vilniustech.mkavalenka.investment.service.XmlService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;

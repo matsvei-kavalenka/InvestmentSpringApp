@@ -38,4 +38,11 @@ public class Investor {
             inverseJoinColumns = @JoinColumn(name = "portfolio_id")
     )
     private List<Portfolio> portfolios;
+
+    public Investor(int id, String firstName, String lastName, String login) {
+        this.id = id;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.login = login;
+    }
 }
