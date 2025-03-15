@@ -43,7 +43,7 @@ public class XmlServiceTest {
 
         when(investorService.getAllInvestors()).thenReturn(investors);
 
-        String filePath = xmlService.transformToXML();
+        String filePath = xmlService.transformToXML("data.xml", "UTF-8");
 
         File file = new File(filePath);
         assertTrue(file.exists(), "The XML file should be created");
