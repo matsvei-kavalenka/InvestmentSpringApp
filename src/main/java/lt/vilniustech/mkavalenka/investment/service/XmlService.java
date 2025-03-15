@@ -22,7 +22,7 @@ public class XmlService {
         this.investorService = investorService;
     }
 
-    public String transformToXML() {
+    public String transformToXML(String fileName, String encoding) {
         File file = null;
         try {
             List<Investor> investors = investorService.getAllInvestors();
@@ -31,8 +31,9 @@ public class XmlService {
             JAXBContext jaxbContext = JAXBContext.newInstance(InvestorWrapper.class);
             Marshaller jaxbMarshaller = jaxbContext.createMarshaller();
             jaxbMarshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE);
+            jaxbMarshaller.setProperty(Marshaller.JAXB_ENCODING, encoding);;
 
-            file = new File("data.xml");
+            file = new File(fileName);
             jaxbMarshaller.marshal(investorWrapper, file);
 
         }
