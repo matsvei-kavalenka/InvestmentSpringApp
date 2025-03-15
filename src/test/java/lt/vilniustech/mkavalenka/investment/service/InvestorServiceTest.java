@@ -1,4 +1,4 @@
-package lt.vilniustech.mkavalenka.investment.unit_tests.service;
+package lt.vilniustech.mkavalenka.investment.service;
 
 import lt.vilniustech.mkavalenka.investment.db.InvestorRepository;
 import lt.vilniustech.mkavalenka.investment.model.Investor;

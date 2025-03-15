@@ -1,4 +1,4 @@
-package lt.vilniustech.mkavalenka.investment.unit_tests.controller;
+package lt.vilniustech.mkavalenka.investment.controller;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
