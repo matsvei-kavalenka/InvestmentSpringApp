@@ -22,6 +22,18 @@ public class XmlService {
         this.investorService = investorService;
     }
 
+
+    /**
+     * Converts a list of investors into an XML file.
+     * <p>
+     * This method retrieves all investors from the service, wraps them in an {@link InvestorWrapper},
+     * and convert them into an XML file at the specified location.
+     * </p>
+     * @param  fileName The path where the XML file will be saved
+     * @param  encoding The character encoding for the XML file (e.g., UTF-8)
+     * @return The absolute file path of the generated XML file
+     * @see InvestorWrapper
+     */
     public String transformToXML(String fileName, String encoding) {
         File file = null;
         try {

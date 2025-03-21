@@ -25,6 +25,15 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.when;
 
+
+/**
+ * Test class for {@link XmlService}.
+ * <p>
+ * This test verifies the behavior of the {@link XmlService#transformToXML(String, String)} method.
+ * It checks if the service correctly generates an XML file, and the content of the XML file
+ * matches the expected structure and data.
+ * </p>
+ */
 @ExtendWith(MockitoExtension.class)
 public class XmlServiceTest {
 
@@ -34,13 +43,25 @@ public class XmlServiceTest {
     @InjectMocks
     private XmlService xmlService;
 
+
+    /**
+     * Verifies that the {@link XmlService#transformToXML(String, String)} method correctly generates
+     * an XML file containing a list of investors and that the generated XML file matches the expected format.
+     * <p>
+     * This test checks if the XML file is created, contains data, and can be unmarshalled correctly into
+     * an {@link InvestorWrapper} object.
+     * </p>
+     *
+     * @throws JAXBException If there is an error during XML processing.
+     * @throws FileNotFoundException If the generated XML file cannot be found.
+     */
     @Test
     public void testTransformToXML() throws JAXBException, FileNotFoundException {
         List<Investor> investors = Arrays.asList(
                 new Investor(1, "Matsvei", "Kavalenka", "mtsv"),
                 new Investor(2, "Zlata", "Dovydkova", "zldvk")
         );
-
+        // Mock the service call to return a predefined list of investors
         when(investorService.getAllInvestors()).thenReturn(investors);
 
         String filePath = xmlService.transformToXML("data.xml", "UTF-8");

@@ -9,6 +9,13 @@ import lombok.Setter;
 
 import java.time.LocalDateTime;
 
+/**
+ * Represents a transaction in the system.
+ * <p>
+ * A transaction is an operation on an asset that investor made.
+ * This class holds transaction's timestamp and quantity of an asset.
+ * </p>
+ */
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
@@ -25,5 +32,4 @@ public class Transaction {
 
     @Column(name = "quantity")
     private int quantity;
-
 }

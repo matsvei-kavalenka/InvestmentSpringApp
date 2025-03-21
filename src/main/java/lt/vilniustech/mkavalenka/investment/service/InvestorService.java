@@ -15,6 +15,11 @@ public class InvestorService {
         this.investorRepository = investorRepository;
     }
 
+    /**
+     * Retrieves a list of all investors from the repository.
+     *
+     * @return A list of {@link Investor} objects.
+     */
     public List<Investor> getAllInvestors() {
         return investorRepository.findAll();
     }

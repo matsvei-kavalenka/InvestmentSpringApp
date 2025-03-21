@@ -9,11 +9,19 @@ import lombok.Setter;
 
 import java.util.List;
 
+
+/**
+ * Represents an investor in the system.
+ * <p>
+ * An investor is a person that invests money into various things.
+ * This class holds investor's name and login credentials.
+ * It also maintains a relationship to the portfolios that the investor owns.
+ * </p>
+ */
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
 @Setter
-
 @Entity
 @Table(name = "investor")
 public class Investor {
@@ -31,6 +39,10 @@ public class Investor {
     @Column(name = "login")
     private String login;
 
+    /**
+     * A list of portfolios owned by the investor.
+     * The investor can have multiple portfolios.
+     */
     @OneToMany
     @JoinTable(
             name = "investor_portfolio",
