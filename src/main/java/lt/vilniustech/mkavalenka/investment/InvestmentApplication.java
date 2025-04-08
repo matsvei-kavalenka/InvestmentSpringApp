@@ -12,4 +12,5 @@ public class InvestmentApplication {
 		SpringApplication.run(InvestmentApplication.class, args);
 	}
 
+
 }

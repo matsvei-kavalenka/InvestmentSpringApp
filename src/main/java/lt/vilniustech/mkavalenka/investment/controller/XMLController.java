@@ -4,6 +4,7 @@ package lt.vilniustech.mkavalenka.investment.controller;
 import lt.vilniustech.mkavalenka.investment.model.InvestorWrapper;
 import lt.vilniustech.mkavalenka.investment.service.XmlService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -17,6 +18,9 @@ import org.springframework.web.bind.annotation.RestController;
 public class XMLController {
     @Autowired
     private XmlService xmlService;
+
+    @Value("${server.instance.id}")
+    String instanceId;
 
     /**
      * Generates an XML file containing a list of investors and returns the file path.
@@ -38,4 +42,8 @@ public class XMLController {
         return ResponseEntity.ok(path);
     }
 
+    @GetMapping("/hello")
+    public String hello() {
+        return String.format("Hello from instance %s", instanceId);
+    }
 }

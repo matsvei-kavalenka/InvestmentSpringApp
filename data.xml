@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<investors>
+    <investor>
+        <firstName>Matsvei</firstName>
+        <id>1</id>
+        <lastName>Kavalenka</lastName>
+        <login>mtsv</login>
+    </investor>
+    <investor>
+        <firstName>Zlata</firstName>
+        <id>2</id>
+        <lastName>Dovydkova</lastName>
+        <login>zldvk</login>
+    </investor>
+</investors>
